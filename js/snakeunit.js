@@ -45,3 +45,7 @@ SnakeUnit.prototype.getNext = function() {
 SnakeUnit.prototype.getPosition = function() {
     return {x : this._posx, y : this._posy};
 }
+
+SnakeUnit.prototype.getVelocity = function() {
+    return this._velocity;
+}
