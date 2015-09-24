@@ -1,5 +1,5 @@
 function mover(unit) {
-    if (unit === null) {
+    if (unit === undefined) {
         return;   
     } else {
         move(unit.getVelocity(), unit);
