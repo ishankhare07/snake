@@ -18,7 +18,8 @@ function SnakeUnit(velocity, posx, posy, next) {
 }
 
 SnakeUnit.prototype.unitRenderer = function() {
-    ctx.fillRect(this._posx, this._posy, 1, 1);
+    ctx.fillStyle = "black";
+    ctx.fillRect(this._posx, this._posy, 2, 2);
 }
 
 SnakeUnit.prototype.changePosition = function(new_x, new_y) {
@@ -32,10 +33,12 @@ SnakeUnit.prototype.changePosition = function(new_x, new_y) {
         new_y = new_y % canvas.height;   
     }
     
-    ctx.clearRect(this._posx, this._posy, 1, 1);
+    ctx.clearRect(this._posx, this._posy, 2, 2);
     this._posx = new_x;
     this._posy = new_y;
     this.unitRenderer();
+    
+    console.log(this._posx, this._posy);
 }
 
 SnakeUnit.prototype.getNext = function() {
@@ -48,4 +51,15 @@ SnakeUnit.prototype.getPosition = function() {
 
 SnakeUnit.prototype.getVelocity = function() {
     return this._velocity;
+}
+
+SnakeUnit.prototype.changeVelocity = function(velocity) {
+    if (this._velocity.x != 0 && (this._velocity.x * -1) == velocity.x) {
+        // pass, as the velocity is just opposite of current velocity
+    } else if (this._velocity.y != 0 && (this._velocity.y * -1) == velocity.y){
+        // pass, valocity is just opposite
+    } else {
+        this._velocity.x = velocity.x;
+        this._velocity.y = velocity.y;
+    }
 }
