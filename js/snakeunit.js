@@ -15,6 +15,7 @@ function SnakeUnit(velocity, posx, posy, next) {
     }
     
     this._velocity = velocity;                          // required argument
+    console.log(this._posx, this._posy);
 }
 
 SnakeUnit.prototype.unitRenderer = function() {
@@ -37,8 +38,6 @@ SnakeUnit.prototype.changePosition = function(new_x, new_y) {
     this._posx = new_x;
     this._posy = new_y;
     this.unitRenderer();
-    
-    console.log(this._posx, this._posy);
 }
 
 SnakeUnit.prototype.getNext = function() {
@@ -61,5 +60,31 @@ SnakeUnit.prototype.changeVelocity = function(velocity) {
     } else {
         this._velocity.x = velocity.x;
         this._velocity.y = velocity.y;
+    }
+}
+
+SnakeUnit.prototype.addUnit = function() {
+    var temp        = this;
+    var prev_pos    = this.getPosition();
+    var prev_vel    = this.getVelocity();
+    while(temp._next != null) {
+        temp        = this._next;
+        prev_pos    = this.getPosition();
+        prev_vel    = this.getVelocity();
+    }
+    
+    temp.addNext({x: prev_vel.x, y: prev_vel.y}, prev_pos.x, prev_pos.y);
+    temp.unitRenderer();
+}
+
+SnakeUnit.prototype.addNext = function(vel, x, y) {
+    if (vel.x > 0) {
+        this._next = new SnakeUnit(vel, x - 2, y);
+    } else if (vel.x < 0) {
+        this._next = new SnakeUnit(vel, x + 2, y);
+    } else if (vel.y > 0) {
+        this._next = new SnakeUnit(vel, x, y - 2);
+    } else if (vel.y < 0) {
+        this._next = new SnakeUnit(vel, x, y + 2);
     }
 }

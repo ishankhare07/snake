@@ -8,5 +8,7 @@ function keyMapper(event) {
         head.changeVelocity({x: 1, y: 0});
     } else if (key === 40) {                                // down
         head.changeVelocity({x: 0, y: 1});
+    } else if (key === 80) {
+        clearInterval(window.mainInterval);
     }
 }
