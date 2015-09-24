@@ -6,16 +6,16 @@ function ($) {
     canvas              = document.getElementById("canvas");
     ctx                 = canvas.getContext("2d");
     
-    head = new SnakeUnit({x: 1, y: 0});
-    head.unitRenderer();
+    snakeHead = new SnakeUnit({x: 1, y: 0});
+    snakeHead.unitRenderer();
     
     food = new Food();
     
     mainInterval = setInterval(function () {
-        if (food.matchEat(head.getPosition())) {
+        mover(snakeHead);
+        if (food.matchEat(snakeHead.getPosition())) {
             food = new Food();
-            head.addUnit();
+            snakeHead.addUnit();
         }
-        mover(head);
     }, sec/level);
 });

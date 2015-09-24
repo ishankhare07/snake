@@ -1,10 +1,7 @@
-function mover(unit) {
-    if (unit === null) {
-        return;   
-    } else {
-        move(unit.getVelocity(), unit);
-        mover(unit.getNext());
-    }
+function mover(snakeHead) {
+    var prev_position = snakeHead.getPosition();
+    move(snakeHead.getVelocity(), snakeHead);
+    followHead(snakeHead.getNext(), prev_position);
 }
 
 function move(velocity, unit) {
@@ -17,5 +14,19 @@ function move(velocity, unit) {
         unit.changePosition(position.x, position.y + 2);
     } else if (velocity.y === -1) {
         unit.changePosition(position.x, position.y - 2);
+    }
+    
+    if(unit.vel_changed) {
+        unit.vel_changed = false;   
+    }
+}
+
+function followHead(unit, position) {
+    if(unit == null) {
+        return;   
+    } else {
+        var prev_position = unit.getPosition();
+        unit.changePosition(position.x, position.y);
+        return followHead(unit.getNext(), prev_position);
     }
 }

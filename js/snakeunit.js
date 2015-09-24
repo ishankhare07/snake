@@ -14,8 +14,9 @@ function SnakeUnit(velocity, posx, posy, next) {
         this._next = next;
     }
     
-    this._velocity = velocity;                          // required argument
-    console.log(this._posx, this._posy);
+    this._velocity      = velocity;                          // required argument
+    this.flag           = false;
+    this.vel_changed    = false;
 }
 
 SnakeUnit.prototype.unitRenderer = function() {
@@ -87,4 +88,6 @@ SnakeUnit.prototype.addNext = function(vel, x, y) {
     } else if (vel.y < 0) {
         this._next = new SnakeUnit(vel, x, y + 2);
     }
+    
+    this._next.unitRenderer();
 }
