@@ -1,4 +1,8 @@
-var canvas = document.getElementById("canvas");
-var ctx = canvas.getContext("2d");
-ctx.fillStyle = "black";
-ctx.fillRect(canvas.width / 2, canvas.height / 2, 2, 2);
+requirejs(['snakeunit'], 
+          function ($, snakeunit) {
+            canvas = document.getElementById("canvas");
+            ctx = canvas.getContext("2d");
+    
+            head = new SnakeUnit();
+            head.unitRenderer();
+        });
