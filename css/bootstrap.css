@@ -1,0 +1,13 @@
+--2015-09-24 17:13:31--  https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css
+Resolving maxcdn.bootstrapcdn.com (maxcdn.bootstrapcdn.com)... 94.31.29.154
+Connecting to maxcdn.bootstrapcdn.com (maxcdn.bootstrapcdn.com)|94.31.29.154|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 122540 (120K) [text/css]
+Saving to: ‘bootstrap.min.css’
+
+     0K .......... .......... .......... .......... .......... 41%  207K 0s
+    50K .......... .......... .......... .......... .......... 83%  132K 0s
+   100K .......... .........                                  100% 88.3M=0.6s
+
+2015-09-24 17:13:33 (193 KB/s) - ‘bootstrap.min.css’ saved [122540/122540]
+

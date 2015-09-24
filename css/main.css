@@ -1,0 +1,14 @@
+.gamebox {
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    border-radius: 3px;
+}
+
+.top-offset {
+    padding-top: 10vh;
+}
+
+canvas {
+    width: 100%;
+}
