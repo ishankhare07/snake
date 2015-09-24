@@ -1,5 +1,5 @@
 requirejs(['snakeunit', 'keymapper', 'mover'], 
-function ($, snakeunit) {
+function ($) {
     window.onkeydown = keyMapper;
     canvas = document.getElementById("canvas");
     ctx = canvas.getContext("2d");
