@@ -26,12 +26,12 @@ SnakeUnit.prototype.unitRenderer = function() {
 
 SnakeUnit.prototype.changePosition = function(new_x, new_y) {
     if (new_x < 0) {
-        new_x = canvas.width - new_x;   
+        new_x = canvas.width - new_x - 1;
     } else if (new_y < 0) {
-        new_y = canvas.height - new_y;   
-    } else if (new_x > canvas.width) {
+        new_y = canvas.height - new_y - 2;
+    } else if (new_x > canvas.width - 1) {
         new_x = new_x % canvas.width;   
-    } else if (new_y > canvas.height) {
+    } else if (new_y > canvas.height - 1) {
         new_y = new_y % canvas.height;   
     }
     

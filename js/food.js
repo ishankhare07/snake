@@ -10,7 +10,11 @@ Food.prototype.matchEat = function(position) {
     if (this.roundDistance(position.x, this._x) && this.roundDistance(position.y, this._y)) {
         ctx.fillStyle = "white";
         ctx.clearRect(this._x, this._y, 2, 2);
-        return true; 
+        var scoreElement = document.getElementById("score")
+        var score = parseInt(scoreElement.innerHTML);
+        scoreElement.innerHTML = String(score + 1);
+
+        return true;
     } else {
         return false;   
     }

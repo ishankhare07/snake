@@ -1,12 +1,21 @@
-.gamebox {
+.box-border {
     border-style: solid;
-    border-width: 1px;
+    border-width: 0px;
     border-color: black;
     border-radius: 3px;
+    box-shadow: 25px 0px 40px -30px, -25px 0px 40px -30px;
 }
 
 .top-offset {
-    padding-top: 10vh;
+    margin-top: 10vh;
+}
+
+.shadow-border {
+    border-style: solid;
+    border-width: 0px;
+    border-color: grey;
+    border-radius: 3px;
+    box-shadow :  0px 0px 3px 0px grey;
 }
 
 canvas {

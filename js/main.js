@@ -11,11 +11,13 @@ function ($) {
     
     food = new Food();
     
-    mainInterval = setInterval(function () {
+    function intervalGenerator() {
         mover(snakeHead);
         if (food.matchEat(snakeHead.getPosition())) {
             food = new Food();
             snakeHead.addUnit();
         }
-    }, sec/level);
+    }
+
+    mainInterval    = setInterval(intervalGenerator, sec/level);
 });

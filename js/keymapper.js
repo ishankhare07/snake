@@ -10,7 +10,12 @@ function keyMapper(event) {
         } else if (key === 40) {                                // down
             snakeHead.changeVelocity({x: 0, y: 1});
         } else if (key === 80) {
-            clearInterval(window.mainInterval);
+            console.log("p pressed");
+            if (window.mainInterval !== undefined) {
+                clearInterval(window.mainInterval);
+            } else {
+                window.mainInterval = setInterval(window.intervalGenerator(), sec/level);
+            }
         }
         snakeHead.vel_changed = true;
     }
