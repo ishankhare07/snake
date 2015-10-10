@@ -69,7 +69,7 @@ SnakeUnit.prototype.addUnit = function() {
     var prev_pos    = this.getPosition();
     var prev_vel    = this.getVelocity();
     while(temp._next != null) {
-        temp        = this._next;
+        temp        = temp._next;
         prev_pos    = this.getPosition();
         prev_vel    = this.getVelocity();
     }
